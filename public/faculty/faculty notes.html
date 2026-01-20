@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Notes Management</title>
+    <link rel="stylesheet" href="/css/faculty notes.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>📚 GIT NOTES FUNDA</h1>
+            <p class="subject-dashboard">Faculty Dashboard</p>
+        </div>
+        <div class="header-right">
+            <button id="mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="profile-container">
+                <div id="profile-icon" class="profile-icon" aria-label="User Profile">A</div>
+                <div id="profile-dropdown" class="dropdown">
+                    <a href="/login.html" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Bar -->
+    <nav class="breadcrumb-bar" aria-label="Current Location">
+        <p id="breadcrumb-text"></p>
+    </nav>
+
+    <!-- Back Button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-btn">⬅️ Back</button>
+</div>
+
+    <!-- Notes Display Section -->
+    <main>
+        <section id="notes-container" aria-label="Notes List" class="notes-grid">
+            <!-- Notes will be loaded dynamically here -->
+        </section>
+
+        <!-- Add Notes Button -->
+        <button id="add-notes-btn" aria-label="Add New Notes">+ Add Notes</button>
+
+        <!-- Add Notes Popup -->
+        <div id="add-notes-popup" class="popup" role="dialog" aria-labelledby="add-notes-title">
+            <div class="popup-content">
+                <h2 id="add-notes-title">📄 Add Notes</h2>
+                <form id="note-upload-form" enctype="multipart/form-data">
+                    <input type="text" id="note-title" name="noteTitle" placeholder="Enter Note Title" required>
+                    <input type="file" id="file-upload" name="noteFile" accept=".pdf,.ppt,.pptx,.doc,.docx,.jpg,.png" required>
+                    <div class="popup-buttons">
+                        <button type="submit" class="upload-btn">Upload</button>
+                        <button type="button" class="close-btn">Close</button>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Us Section -->
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <p>Ashin Shyju</p>
+                <a href="https://www.linkedin.com/in/ashin-shyju" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+            <div class="contact-item">
+                <p>Nidhi D Kallatti</p>
+                <a href="https://www.linkedin.com/in/nidhi-d-kallatti" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script should be loaded at the end for better performance -->
+    <script src="/js/faculty notes.js"></script>
+</body>
+</html>

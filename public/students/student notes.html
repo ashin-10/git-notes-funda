@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes Management</title>
+    <link rel="stylesheet" href="/css/student notes.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>📚 GIT NOTES FUNDA</h1>
+            <p class="subject-dashboard">Student Dashboard</p>
+        </div>
+        <div class="header-right">
+            <button id="mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="profile-container">
+                <div id="profile-icon" class="profile-icon" aria-label="User Profile">A</div>
+                <div id="profile-dropdown" class="dropdown">
+                    <a href="/login.html" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Bar -->
+    <nav class="breadcrumb-bar" aria-label="Current Location">
+        <p id="breadcrumb-text"></p>
+    </nav>
+
+<!-- Back Button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-btn">⬅️ Back</button>
+</div>
+
+    <!-- Notes Display Section -->
+    <main>
+        <section id="notes-container" aria-label="Notes List" class="notes-grid">
+            <!-- Example Note Entry -->
+            <div class="note-box">
+                <h3>📄 Sample Note</h3>
+                <p>File: sample_note.pdf</p>
+                <p>Size: 500 KB</p>
+                <div class="note-actions">
+                    <button class="view-btn">View</button>
+                    <button class="download-btn">Download</button>
+                </div>                
+            </div>
+        </section>
+    </main>
+
+    <!-- View Document Popup -->
+    <div id="view-document-popup" class="popup" role="dialog">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeDocumentView()">&times;</button>
+            <iframe id="document-viewer" src="" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <p>Ashin Shyju</p>
+                <a href="https://www.linkedin.com/in/ashin-shyju" target="_blank" rel="noopener noreferrer">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" 
+                        alt="Ashin Shyju's LinkedIn Profile" class="linkedin-icon">
+                </a>
+            </div>
+            <div class="contact-item">
+                <p>Nidhi D Kallatti</p>
+                <a href="https://www.linkedin.com/in/nidhi-d-kallatti" target="_blank" rel="noopener noreferrer">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" 
+                        alt="Nidhi D Kallatti's LinkedIn Profile" class="linkedin-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script defer src="/js/student notes.js"></script>
+</body>
+</html>

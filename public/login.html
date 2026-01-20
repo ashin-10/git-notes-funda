@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>GIT NOTES FUNDA - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>GIT NOTES FUNDA</h1>
+            <p>Your friendly notes partner</p>
+        </div>
+    </header>
+    
+    
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" id="login-button">Login</button>
+                <p class="register-link">Don't have an account? <a href="/register.html">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Popup -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup-box">
+            <h2>&#127881; Login Successful! &#127881;</h2>
+            <p>Welcome to GIT Notes Funda &#128218; &#100244;. You have successfully logged in.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="/js/login.js" defer></script>
+</body>
+</html>

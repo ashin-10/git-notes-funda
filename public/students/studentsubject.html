@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects Selection</title>
+    <link rel="stylesheet" href="/css/studentsubject.css">
+    <script defer src="/js/studentsubjects.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>📚 GIT NOTES FUNDA </h1>
+            <p class="subject-dashboard">Subject Dashboard</p>
+        </div>
+        <div class="header-right">
+            <button id="mode-toggle">🌙</button>
+            <div class="profile-container" onclick="toggleDropdown()">
+                <div id="profile-icon" class="profile-icon">A</div>
+                <div id="profile-dropdown" class="dropdown">
+                    <a href="/login.html" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Branch and Semester Bar -->
+<div class="branch-bar" id="branch-bar"></div>
+
+<!-- Back Button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-btn">⬅️ Back</button>
+</div>
+
+    <!-- Subjects Container -->
+    <div id="subject-container"></div>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <p>Ashin Shyju</p>
+                <a href="https://www.linkedin.com/in/ashin-shyju" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+            <div class="contact-item">
+                <p>Nidhi D Kallatti</p>
+                <a href="https://www.linkedin.com/in/nidhi-d-kallatti" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

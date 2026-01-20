@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT NOTES FUNDA - Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>GIT NOTES FUNDA</h1>
+            <p>Your friendly notes partner</p>
+        </div>
+    </header>
+    
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <select id="role" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Enter Name" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Enter Email" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+
+                <button type="submit">Register</button>
+                <p class="file:///H:/web/login.html">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-container">
+        <div class="popup-box">
+            <h2>🎉 Registration Successful! 🎉</h2>
+            <p>Welcome to GIT Notes Funda 📚. Your account has been created.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="/js/register.js" defer></script>
+</body>
+</html>

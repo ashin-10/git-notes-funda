@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="/css/faculty dashboard.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-left">
+            <img src="https://lms.git.edu/assets/img/logoc.png" alt="College Logo" class="college-logo">
+        </div>
+        <div class="header-center">
+            <h1>📚 GIT NOTES FUNDA </h1>
+            <p class="faculty-dashboard">Faculty Dashboard</p>
+        </div>
+        <div class="header-right">
+            <button id="mode-toggle">🌙</button>
+            <div class="profile-container" onclick="toggleDropdown()">
+                <div id="profile-icon" class="profile-icon">?</div>
+                <div id="profile-dropdown" class="dropdown">
+                    <a href="/login.html" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-wrapper">
+            <img src="/images/books3.jpeg" alt="Books" class="side-image">
+            
+            <div class="form-container">
+                <h2>Select Branch & Semester</h2>
+                <label for="branch">Branch:</label>
+                <select id="branch">
+                    <option value="CSE">Computer Science and Engineering</option>
+                    <option value="ISE">Information Science and Engineering</option>
+                    <option value="AIML">AI and ML</option>
+                    <option value="ECE">Electronics and Communication Engineering</option>
+                    <option value="EEE">Electrical and Electronics Engineering</option>
+                    <option value="MECH">Mechanical Engineering</option>
+                    <option value="AERO">Aeronautical Engineering</option>
+                    <option value="CIVIL">Civil Engineering</option>
+                </select>
+
+                <label for="semester">Semester:</label>
+                <select id="semester">
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                    <option value="3">3rd Semester</option>
+                    <option value="4">4th Semester</option>
+                    <option value="5">5th Semester</option>
+                    <option value="6">6th Semester</option>
+                    <option value="7">7th Semester</option>
+                    <option value="8">8th Semester</option>
+                </select>
+
+                <button onclick="goToSubjects()">Next</button>
+            </div>
+
+            <img src="/images/library.jpeg" alt="Library" class="side-image">
+        </div>
+    </main>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <p>Ashin Shyju</p>
+                <a href="https://www.linkedin.com/in/ashin-shyju" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+            <div class="contact-item">
+                <p>Nidhi D Kallatti</p>
+                <a href="https://www.linkedin.com/in/nidhi-d-kallatti" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            // Protect page from unauthorized access
+            const isLoggedIn = localStorage.getItem("loggedIn");
+            const userRole = localStorage.getItem("userRole");
+        
+            if (!isLoggedIn || !userRole) {
+            alert("🚫 Unauthorized access! Please login first.");
+              window.location.href = "/login.html"; // redirect to login page
+            }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the username from localStorage
+            let username = localStorage.getItem("username");
+        
+            if (username) {
+                // Set the first letter of the username in the profile icon
+                document.getElementById("profile-icon").textContent = username.charAt(0).toUpperCase();
+            } else {
+                console.error("Username not found in localStorage");
+            }
+        });
+        function goToSubjects() {
+            let branch = document.getElementById("branch").selectedOptions[0].text;
+            let semester = document.getElementById("semester").selectedOptions[0].text;
+        
+            // Save selected values to localStorage
+            localStorage.setItem("selectedBranch", branch);
+            localStorage.setItem("selectedSemester", semester);
+        
+            // Navigate to faculty_subjects.html (it will load based on saved values)
+            window.location.href = "/faculty/subjects.html";
+        }
+        
+        function toggleDropdown() {
+            document.getElementById("profile-dropdown").classList.toggle("show");
+        }
+
+        function logout() {
+            // 🧹 Clear all authentication data
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("userRole");
+            localStorage.removeItem("username");
+            localStorage.removeItem("token");
+        
+            alert("👋 Logged out successfully!");
+            window.location.href = "/login.html";
+        }
+        
+        function toggleMode() {
+            let body = document.body;
+            let toggleButton = document.getElementById("mode-toggle");
+            if (body.classList.contains("light-mode")) {
+                body.classList.replace("light-mode", "dark-mode");
+                toggleButton.textContent = "☀️";
+            } else {
+                body.classList.replace("dark-mode", "light-mode");
+                toggleButton.textContent = "🌙";
+            }
+        }
+
+        document.getElementById("mode-toggle").addEventListener("click", toggleMode);
+    </script>
+</body>
+</html>
